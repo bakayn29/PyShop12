@@ -49,11 +49,11 @@ def update_product(request, id):
 
 def delete_product(request, id):
     product = get_object_or_404(Product, pk=id)
-    print("3333333333333")
+    # print("3333333333333")
     if request.method == 'POST':
         slug = product.category.slug
-        print("1111111")
-        print(slug)
+        # print("1111111")
+        # print(slug)
         product.delete()
         return redirect('list', slug)
 
