@@ -12,6 +12,7 @@
         <h5 class="card-title">{{ product.name }}</h5>
         <p class="card-text">{{ product.description }}</p>
         <p class="card-text"><small class="text-muted">{{ product.price }} сом</small></p>
+
         {% if product.status == 'in stock' %}
         <p style="color: green;" class="card-text">В наличии</p>
         {% elif product.status == 'out of stock' %}
@@ -19,6 +20,7 @@
         {% else %}
         <p style="color: blue;" class="card-text">Ожидается</p>
         {% endif %}
+
         <a class="btn btn-warning" href="{% url 'update_product' product.id %}" role="button">Update</a>
         <a class="btn btn-danger" href="{% url 'delete_product' product.id %}" role="button">Delete</a>
 
